@@ -1,54 +1,109 @@
-# React + TypeScript + Vite
+# Weather Widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather application built with React, TypeScript, and Vite that provides real-time weather information for any city worldwide.
 
-Currently, two official plugins are available:
+![Weather Widget Screenshot](https://static.vinwonders.com/production/mountains-in-Vietnam-banner.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-time Weather Data**: Fetches current weather conditions from OpenWeatherMap API
+- **City Search**: Search for weather information in any city around the world
+- **Responsive Design**: Optimized for all device sizes from mobile phones to desktop computers
+- **Visual Weather Information**: Displays temperature, feels-like temperature, humidity, wind speed, and weather conditions with icons
+- **Error Handling**: Graceful error handling with user-friendly messages
+- **Loading States**: Visual feedback during data fetching
+- **Beautiful UI**: Clean interface with a scenic background image
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React 19**: For building the user interface
+- **TypeScript**: For type safety and better developer experience
+- **Vite**: For fast development and optimized builds
+- **CSS3**: For styling with responsive design principles
+- **OpenWeatherMap API**: For weather data
+- **ESLint**: For code quality
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 18.0.0 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/miro789/Weather-Widget.git
+   cd Weather-Widget
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+### Building for Production
+
+```bash
+npm run build
+# or
+yarn build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The build artifacts will be stored in the `dist/` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Usage
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. The app initially loads with weather data for Hanoi, Vietnam
+2. Enter a city name in the search box
+3. Click "Get Weather" or press Enter
+4. View the current weather conditions for the specified city
+
+## API Key
+
+This project uses the OpenWeatherMap API. The API key is included in the source code for demonstration purposes. For a production application, you should:
+
+1. Create a `.env` file in the root directory
+2. Add your API key:
+   ```
+   VITE_WEATHER_API_KEY=your_api_key_here
+   ```
+3. Update the code to use the environment variable:
+   ```typescript
+   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+   ```
+
+## Future Enhancements
+
+- Weather forecast for upcoming days
+- Geolocation to automatically detect user's city
+- Unit conversion (Celsius/Fahrenheit)
+- Dark mode support
+- Weather alerts and notifications
+- Saving favorite locations
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
+- Background image from [VinWonders](https://vinwonders.com/)
+- Built with [Vite](https://vitejs.dev/) and [React](https://react.dev/)
+
